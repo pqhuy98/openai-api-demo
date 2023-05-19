@@ -1,0 +1,64 @@
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #app {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            padding: 20%;
+        }
+
+        #transparent {
+            width: 1024px;
+            cursor: pointer;
+        }
+
+        #output {
+            width: 1024px;
+        }
+
+        #transparent,
+        #output {
+            border: 1px solid black;
+        }
+
+        #promptarea {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DALL-E explorer</h1>
+    <div>
+        <label for="url">Image URL</label>
+        <input id="url" type="text" placeholder="Image URL"
+            value="https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-6/347796656_294981079520254_6981064974282336150_n.jpg?stp=cp6_dst-jpg&_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=eiaraE6-ft8AX8aleby&_nc_ht=scontent-arn2-1.xx&oh=00_AfAJMlPuaSVb3gqPG3T-3O36ojnZpTibLTqBt6HYYfjDWg&oe=646B7877"
+            size="50" />
+        <button id="reset">Load/Reset</button>
+    </div>
+
+    <br>
+    <div id="promptarea">
+        <label for="prompt">Prompt</label>
+        <textarea id="prompt" placeholder="A cat" cols="45"></textarea>
+        <button id="generate">Generate</button>
+    </div>
+
+    <div id="canvases">
+        <canvas id="transparent" width="1" height="1"></canvas>
+        <canvas id="output" width="1" height="1"></canvas>
+    </div>
+    <script src="image.js"></script>
+</body>
